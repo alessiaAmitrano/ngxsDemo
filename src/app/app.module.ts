@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ListContainerComponent } from './list-container/list-container.component';
-import { MaterialUiModule } from './material-ui/material-ui.module';
+import { ListContainerComponent } from './components/list-container/list-container.component';
+import { MaterialUiModule } from './utils/material-ui/material-ui.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ListItemInputComponent } from './list-item-input/list-item-input.component';
-import { ListComponent } from './list/list.component';
+import { ListItemInputComponent } from './components/list-item-input/list-item-input.component';
+import { ListComponent } from './components/list/list.component';
 
 @NgModule({
   declarations: [AppComponent, ListContainerComponent, ListItemInputComponent, ListComponent],
