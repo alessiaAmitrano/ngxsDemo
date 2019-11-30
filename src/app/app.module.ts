@@ -1,20 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
-import { ProductInputComponent } from './product-input/product-input.component';
-import { ProductListComponent } from './product-list/product-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListContainerComponent } from './list-container/list-container.component';
+import { MaterialUiModule } from './material-ui/material-ui.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListItemInputComponent } from './list-item-input/list-item-input.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductInputComponent, ProductListComponent],
+  declarations: [AppComponent, ListContainerComponent, ListItemInputComponent, ListComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    MaterialUiModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgxsModule.forRoot([]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     BrowserAnimationsModule

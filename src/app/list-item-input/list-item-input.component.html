@@ -1,0 +1,15 @@
+<mat-form-field>
+  <!-- Input Field -->
+  <input
+    matInput
+    id="input-item-text"
+    type="text"
+    name="itemText"
+    autocomplete="off"
+    [formControl]="listItemControl"
+  />
+</mat-form-field>
+
+<button mat-button color="primary" (click)="submitItemEmt.emit()">
+  Add Item
+</button>
