@@ -1,5 +1,11 @@
 <mat-list>
-  <mat-list-item> Pepper </mat-list-item>
-  <mat-list-item> Salt </mat-list-item>
-  <mat-list-item> Paprika </mat-list-item>
+  <mat-list-item
+    *ngFor="let item of listItems; index as i"
+    (click)="deleteItem(item)"
+  >
+    {{ item }}
+  </mat-list-item>
+  <button mat-button color="primary" (click)="back()">
+    Insert new
+  </button>
 </mat-list>

@@ -11,16 +11,24 @@ import { MaterialUiModule } from './utils/material-ui/material-ui.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListItemInputComponent } from './components/list-item-input/list-item-input.component';
 import { ListComponent } from './components/list/list.component';
+import { ListState } from './store/list.state';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, ListContainerComponent, ListItemInputComponent, ListComponent],
+  declarations: [
+    AppComponent,
+    ListContainerComponent,
+    ListItemInputComponent,
+    ListComponent
+  ],
   imports: [
     BrowserModule,
     MaterialUiModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxsModule.forRoot([]),
+    NgxsModule.forRoot([ListState]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     BrowserAnimationsModule
   ],

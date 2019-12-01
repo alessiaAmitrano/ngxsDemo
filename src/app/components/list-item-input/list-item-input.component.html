@@ -1,15 +1,26 @@
-<mat-form-field>
-  <!-- Input Field -->
-  <input
-    matInput
-    id="input-item-text"
-    type="text"
-    name="itemText"
-    autocomplete="off"
-    [formControl]="listItemControl"
-  />
-</mat-form-field>
+<section>
+  <mat-card>
+    <mat-card-title>Your Shopping List</mat-card-title>
+    <mat-card-subtitle>Add an Item</mat-card-subtitle>
 
-<button mat-button color="primary" (click)="submitItemEmt.emit()">
-  Add Item
-</button>
+    <mat-form-field>
+      <!-- Input Field -->
+      <input
+        matInput
+        id="input-item-text"
+        type="text"
+        name="itemText"
+        autocomplete="off"
+        [formControl]="form.get('listItem')"
+      />
+    </mat-form-field>
+
+    <button mat-button color="primary" (click)="submitItem()">
+      Add Item
+    </button>
+    <button mat-button color="primary" (click)="viewList()">
+      View List
+    </button>
+    <mat-card-subtitle *ngIf="showItemAdded">Item Added!</mat-card-subtitle>
+  </mat-card>
+</section>

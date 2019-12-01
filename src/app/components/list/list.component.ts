@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  @Input() listItems: string[];
+  @Output() deleteItemEmt: EventEmitter<string> = new EventEmitter<string>();
+  constructor(private router: Router) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  deleteItem(item: string) {
+    this.deleteItemEmt.emit(item);
   }
 
+  back() {
+    this.router.navigate(['']);
+  }
 }
